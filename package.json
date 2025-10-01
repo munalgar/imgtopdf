@@ -1,6 +1,6 @@
 {
   "name": "imgtopdf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Offline desktop app for converting images to PDF",
   "main": "./out/main/index.js",
   "author": "Alejandro Munoz",

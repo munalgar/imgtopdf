@@ -106,18 +106,21 @@ npm install
 Choose the installer for your operating system:
 
 #### Windows
-- **`imgtopdf-{version}-setup.exe`** 
+
+- **`imgtopdf-{version}-setup.exe`**
   - Full NSIS installer with desktop shortcut
   - Supports Windows 10 and 11
   - Automatic updates (future releases)
 
 #### macOS
+
 - **`imgtopdf-{version}.dmg`**
   - Drag-and-drop disk image installer
   - Supports macOS 10.13 (High Sierra) and later
   - Intel and Apple Silicon compatible
 
 #### Linux
+
 - **`imgtopdf-{version}.AppImage`** (Recommended)
   - Portable, runs on any Linux distribution
   - No installation required, just make executable and run

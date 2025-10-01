@@ -41,4 +41,7 @@ linux:
 appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
-publish: null
+publish:
+  provider: github
+  owner: munalgar
+  repo: imgtopdf

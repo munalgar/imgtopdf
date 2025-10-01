@@ -6,7 +6,10 @@
 
 **A powerful, offline-first desktop application for converting images to PDF**
 
+[![Build and Test](https://github.com/munalgar/imgtopdf/actions/workflows/build.yml/badge.svg)](https://github.com/munalgar/imgtopdf/actions/workflows/build.yml)
+[![Release](https://github.com/munalgar/imgtopdf/actions/workflows/release.yml/badge.svg)](https://github.com/munalgar/imgtopdf/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/munalgar/imgtopdf)](https://github.com/munalgar/imgtopdf/releases)
 [![Electron](https://img.shields.io/badge/Electron-38-blue.svg)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
@@ -93,13 +96,16 @@ npm install
 
 ### For End Users
 
-Download the latest pre-built release for your platform:
+Download the latest pre-built release for your platform from the [Releases page](https://github.com/munalgar/imgtopdf/releases):
 
-- **Windows**: `imgtopdf-{version}-setup.exe`
-- **macOS**: `imgtopdf-{version}.dmg`
-- **Linux**: `imgtopdf-{version}.AppImage` / `.deb` / `.snap`
+- **Windows**: `imgtopdf-{version}-setup.exe` - Full installer with desktop shortcut
+- **macOS**: `imgtopdf-{version}.dmg` - Drag-and-drop disk image
+- **Linux**: 
+  - `imgtopdf-{version}.AppImage` - Portable, no installation required
+  - `imgtopdf-{version}.deb` - Debian/Ubuntu package
+  - `imgtopdf-{version}.snap` - Universal Linux package
 
-> **Note**: Pre-built releases are not yet available. Please build from source (see [Building](#building) section).
+All releases are automatically built and tested via GitHub Actions.
 
 ### Running from Source
 
@@ -277,6 +283,16 @@ npm install
 - Check Node.js version (20.19+ or 22.12+)
 - Try rebuilding: `npm run postinstall`
 
+## Releases & Distribution
+
+This project uses **GitHub Actions** for automated builds and releases:
+
+- ✅ **Continuous Integration**: Every push to `main` triggers builds on Windows, macOS, and Linux
+- ✅ **Automated Releases**: Push a version tag (e.g., `v0.1.0`) to automatically create a GitHub release
+- ✅ **Cross-Platform**: All platforms are built simultaneously using GitHub-hosted runners
+
+See [Release Instructions](.github/RELEASE_TEMPLATE.md) for details on publishing new versions.
+
 ## Roadmap
 
 - [ ] Drag-to-reorder images
@@ -285,6 +301,7 @@ npm install
 - [ ] Batch processing presets
 - [ ] CLI interface for automation
 - [ ] Dark mode support
+- [ ] Auto-update mechanism
 
 ## License
 

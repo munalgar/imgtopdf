@@ -1,0 +1,101 @@
+:root {
+  color-scheme: light;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 48px;
+  --space-5xl: 56px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  line-height: 1.47;
+  color: #1d1d1f;
+  background: #f5f6fa;
+  font-family:
+    'SF Pro Rounded',
+    'SF Pro',
+    'San Francisco',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  list-style: none;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  background: #f5f6fa;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.alert {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  background: rgba(255, 204, 0, 0.12);
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  color: #bf5700;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 4px 16px 0 rgba(255, 204, 0, 0.15),
+    0 1px 4px 0 rgba(255, 204, 0, 0.08);
+}
+
+.alert strong {
+  color: #8b4513;
+  font-weight: 600;
+}
+
+.alert ul {
+  margin: var(--space-xs) 0 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.alert li {
+  padding: var(--space-2xs) 0;
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.alert li:before {
+  content: '•';
+  color: #ff9500;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}

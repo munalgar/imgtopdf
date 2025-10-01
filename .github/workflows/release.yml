@@ -33,53 +33,20 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Build and release (Ubuntu)
+      - name: Build and publish release (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: npm run build:linux
+        run: npm run build && npx electron-builder --linux --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and release (Windows)
+      - name: Build and publish release (Windows)
         if: matrix.os == 'windows-latest'
-        run: npm run build:win
+        run: npm run build && npx electron-builder --win --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and release (macOS)
+      - name: Build and publish release (macOS)
         if: matrix.os == 'macos-latest'
-        run: npm run build:mac
+        run: npm run build && npx electron-builder --mac --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Release Assets (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            dist/*.AppImage
-            dist/*.deb
-            dist/*.snap
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Release Assets (Windows)
-        if: matrix.os == 'windows-latest'
-        uses: softprops/action-gh-release@v1
-        with:
-          files: dist/*.exe
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Release Assets (macOS)
-        if: matrix.os == 'macos-latest'
-        uses: softprops/action-gh-release@v1
-        with:
-          files: dist/*.dmg
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -29,20 +29,23 @@ Perfect for photographers, designers, document scanners, or anyone who needs to 
 ## Features
 
 ### 🖼️ **Comprehensive Format Support**
+
 - **Image Formats**: JPEG, PNG, WebP, HEIC/HEIF, TIFF, BMP
 - Automatic format detection and validation
 - EXIF orientation handling (auto-rotation)
 
 ### 🎯 **Intuitive Drag-and-Drop Interface**
+
 - Drop images directly into the app window
 - File browser integration with multi-selection
 - Real-time thumbnail preview with file information
 - Easy reordering and removal of images
 
 ### ⚙️ **Advanced PDF Configuration**
+
 - **Page Sizes**: A4, Letter, Legal, Tabloid, A3, A5, or custom dimensions
 - **Margins**: Configurable margins (0-2 inches)
-- **Scaling Modes**: 
+- **Scaling Modes**:
   - Fit to page (maintain aspect ratio)
   - Fill page (crop to fit)
   - Original size (no scaling)
@@ -50,12 +53,14 @@ Perfect for photographers, designers, document scanners, or anyone who needs to 
 - **Metadata**: Optional EXIF data preservation
 
 ### 📊 **Real-Time Feedback**
+
 - Live conversion progress with file-by-file updates
 - Cancellation support for long-running jobs
 - Warning and error reporting
 - Success confirmation with output location
 
 ### 🔒 **Privacy-First Design**
+
 - 100% offline processing
 - No telemetry or analytics
 - No external API calls
@@ -100,7 +105,7 @@ Download the latest pre-built release for your platform from the [Releases page]
 
 - **Windows**: `imgtopdf-{version}-setup.exe` - Full installer with desktop shortcut
 - **macOS**: `imgtopdf-{version}.dmg` - Drag-and-drop disk image
-- **Linux**: 
+- **Linux**:
   - `imgtopdf-{version}.AppImage` - Portable, no installation required
   - `imgtopdf-{version}.deb` - Debian/Ubuntu package
   - `imgtopdf-{version}.snap` - Universal Linux package
@@ -182,23 +187,27 @@ npm run build:linux      # Build Linux packages
 ### Architecture Notes
 
 **Main Process** (`src/main/`)
+
 - Handles file system operations
 - Manages IPC communication
 - Runs conversion pipeline
 - Creates native dialogs
 
 **Preload Script** (`src/preload/`)
+
 - Provides secure bridge between main and renderer
 - Exposes minimal API surface
 - Prevents direct Node.js access from renderer
 
 **Renderer Process** (`src/renderer/`)
+
 - React-based UI
 - Manages application state
 - Handles user interactions
 - No direct file system access
 
 **Conversion Pipeline**:
+
 1. **Inspector**: Validates files and extracts metadata
 2. **Processor**: Decodes, rotates, and resizes images with sharp
 3. **Assembler**: Embeds processed images into PDF with pdf-lib
@@ -215,6 +224,7 @@ npm run build:linux      # Build Linux packages
 ```bash
 npm run build:win
 ```
+
 Output: `dist/imgtopdf-{version}-setup.exe`
 
 #### macOS
@@ -222,9 +232,11 @@ Output: `dist/imgtopdf-{version}-setup.exe`
 ```bash
 npm run build:mac
 ```
+
 Output: `dist/imgtopdf-{version}.dmg`
 
 Requirements:
+
 - macOS 10.13+
 - Xcode Command Line Tools
 
@@ -233,7 +245,9 @@ Requirements:
 ```bash
 npm run build:linux
 ```
+
 Outputs:
+
 - `dist/imgtopdf-{version}.AppImage`
 - `dist/imgtopdf-{version}.deb`
 - `dist/imgtopdf-{version}.snap`
@@ -241,6 +255,7 @@ Outputs:
 ### Build Configuration
 
 Customize builds in `electron-builder.yml`:
+
 - App ID and product name
 - Icon paths
 - File filters
@@ -258,6 +273,7 @@ Contributions are welcome! Here's how you can help:
 5. **Open a Pull Request**
 
 Please ensure:
+
 - Code passes `npm run typecheck`
 - Linting passes `npm run lint`
 - Tests pass (if applicable)
@@ -268,6 +284,7 @@ Please ensure:
 ### Common Issues
 
 **Sharp Installation Errors**
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules package-lock.json
@@ -275,10 +292,12 @@ npm install
 ```
 
 **HEIC/HEIF Not Working**
+
 - Ensure sharp's libvips includes libheif support
 - On Linux, install `libheif-dev` package
 
 **Build Fails with Native Dependencies**
+
 - Always build on the target platform
 - Check Node.js version (20.19+ or 22.12+)
 - Try rebuilding: `npm run postinstall`
@@ -310,6 +329,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## Acknowledgments
 
 Built with these amazing open-source projects:
+
 - [pdf-lib](https://github.com/Hopding/pdf-lib) for PDF generation
 - [sharp](https://github.com/lovell/sharp) for image processing
 - [electron-vite](https://github.com/alex8088/electron-vite) for build tooling

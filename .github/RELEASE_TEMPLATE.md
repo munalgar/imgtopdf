@@ -15,6 +15,7 @@ npm version major  # for breaking changes (0.1.0 -> 1.0.0)
 ```
 
 This will automatically:
+
 - Update version in package.json and package-lock.json
 - Create a git commit with the version bump
 - Create a git tag (e.g., v0.1.1)
@@ -28,6 +29,7 @@ git push origin main --tags
 ### 3. Automated Build
 
 GitHub Actions will automatically:
+
 - Build for Windows, macOS, and Linux
 - Create a GitHub release with the tag name
 - Upload all distributable files to the release
@@ -41,6 +43,7 @@ GitHub Actions will automatically:
 ### 5. Edit Release Notes (Optional)
 
 Once the release is published:
+
 1. Go to https://github.com/munalgar/imgtopdf/releases
 2. Click "Edit" on the new release
 3. Add release notes describing changes
@@ -51,12 +54,15 @@ Once the release is published:
 Each release will include:
 
 **Windows**
+
 - `imgtopdf-{version}-setup.exe` - NSIS installer
 
 **macOS**
+
 - `imgtopdf-{version}.dmg` - Disk image
 
 **Linux**
+
 - `imgtopdf-{version}.AppImage` - Portable executable
 - `imgtopdf-{version}.deb` - Debian/Ubuntu package
 - `imgtopdf-{version}.snap` - Snap package
@@ -77,15 +83,17 @@ npm run build:linux  # Linux
 ## Troubleshooting
 
 **Build fails on macOS**
+
 - Ensure you have Xcode Command Line Tools installed
 - Code signing is disabled by default (notarize: false)
 
 **Build fails on Linux**
+
 - Snap builds require `snapcraft` to be installed
 - You can disable snap in electron-builder.yml if needed
 
 **Release not created**
+
 - Ensure the tag follows the format `v*.*.*` (e.g., v0.1.0)
 - Check that GitHub Actions has write permissions
 - Verify the GH_TOKEN secret is available
-

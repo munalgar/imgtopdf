@@ -101,16 +101,37 @@ npm install
 
 ### For End Users
 
-Download the latest pre-built release for your platform from the [Releases page](https://github.com/munalgar/imgtopdf/releases):
+**[📥 Download Latest Release](https://github.com/munalgar/imgtopdf/releases/latest)**
 
-- **Windows**: `imgtopdf-{version}-setup.exe` - Full installer with desktop shortcut
-- **macOS**: `imgtopdf-{version}.dmg` - Drag-and-drop disk image
-- **Linux**:
-  - `imgtopdf-{version}.AppImage` - Portable, no installation required
-  - `imgtopdf-{version}.deb` - Debian/Ubuntu package
-  - `imgtopdf-{version}.snap` - Universal Linux package
+Choose the installer for your operating system:
 
-All releases are automatically built and tested via GitHub Actions.
+#### Windows
+- **`imgtopdf-{version}-setup.exe`** 
+  - Full NSIS installer with desktop shortcut
+  - Supports Windows 10 and 11
+  - Automatic updates (future releases)
+
+#### macOS
+- **`imgtopdf-{version}.dmg`**
+  - Drag-and-drop disk image installer
+  - Supports macOS 10.13 (High Sierra) and later
+  - Intel and Apple Silicon compatible
+
+#### Linux
+- **`imgtopdf-{version}.AppImage`** (Recommended)
+  - Portable, runs on any Linux distribution
+  - No installation required, just make executable and run
+  - `chmod +x imgtopdf-*.AppImage && ./imgtopdf-*.AppImage`
+
+- **`imgtopdf-{version}.deb`**
+  - For Debian/Ubuntu/Mint and derivatives
+  - Install with: `sudo dpkg -i imgtopdf-*.deb`
+
+- **`imgtopdf-{version}.snap`**
+  - Universal Linux package via Snap Store
+  - Install with: `sudo snap install imgtopdf-*.snap --dangerous`
+
+> 💡 **All releases are automatically built and tested** via GitHub Actions on Windows, macOS, and Linux runners to ensure quality and compatibility.
 
 ### Running from Source
 

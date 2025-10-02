@@ -40,6 +40,9 @@ linux:
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
+snap:
+  publish:
+    - github
 npmRebuild: false
 publish:
   provider: github

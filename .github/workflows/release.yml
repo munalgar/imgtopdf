@@ -31,7 +31,8 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libvips-dev
+          sudo apt-get install -y libvips-dev libfuse2 fuse
+          sudo snap install snapcraft --classic
 
       - name: Install dependencies
         run: npm ci

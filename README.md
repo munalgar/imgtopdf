@@ -336,15 +336,6 @@ This project uses **GitHub Actions** for automated builds and releases:
 
 See [Release Instructions](.github/RELEASE_TEMPLATE.md) for details on publishing new versions.
 
-## Roadmap
-
-- [ ] Drag-to-reorder images
-- [ ] PDF page editing (rotate, delete, reorder)
-- [ ] OCR support for scanned documents
-- [ ] Batch processing presets
-- [ ] CLI interface for automation
-- [ ] Dark mode support
-- [ ] Auto-update mechanism
 
 ## License
 

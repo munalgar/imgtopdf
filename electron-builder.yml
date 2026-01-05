@@ -34,15 +34,11 @@ linux:
   icon: assets/app-icon/imgtopdf-icon.png
   target:
     - AppImage
-    - snap
     - deb
   maintainer: munalgar
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
-snap:
-  publish:
-    - github
 npmRebuild: false
 publish:
   provider: github

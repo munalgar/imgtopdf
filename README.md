@@ -130,10 +130,6 @@ Choose the installer for your operating system:
   - For Debian/Ubuntu/Mint and derivatives
   - Install with: `sudo dpkg -i imgtopdf-*.deb`
 
-- **`imgtopdf-{version}.snap`**
-  - Universal Linux package via Snap Store
-  - Install with: `sudo snap install imgtopdf-*.snap --dangerous`
-
 > 💡 **All releases are automatically built and tested** via GitHub Actions on Windows, macOS, and Linux runners to ensure quality and compatibility.
 
 ### Running from Source
@@ -274,7 +270,6 @@ Outputs:
 
 - `dist/imgtopdf-{version}.AppImage`
 - `dist/imgtopdf-{version}.deb`
-- `dist/imgtopdf-{version}.snap`
 
 ### Build Configuration
 
@@ -331,7 +326,7 @@ npm install
 This project uses **GitHub Actions** for automated builds and releases:
 
 - ✅ **Continuous Integration**: Every push to `main` triggers builds on Windows, macOS, and Linux
-- ✅ **Automated Releases**: Push a version tag (e.g., `v0.1.0`) to automatically create a GitHub release
+- ✅ **Automated Releases**: Push a matching version tag (e.g., `v1.0.6`) to publish a public GitHub release after every platform build succeeds
 - ✅ **Cross-Platform**: All platforms are built simultaneously using GitHub-hosted runners
 
 See [Release Instructions](.github/RELEASE_TEMPLATE.md) for details on publishing new versions.
